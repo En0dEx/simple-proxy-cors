@@ -1,12 +1,14 @@
-# Proxy pour le SI
+# Simple CORS proxy
 
-Permets de développer sur Ionic en utilisant le browser, sans avoir le problème de CORS (Access-Control-Allow-Origin).
+Proxy that allow you to access resources from other websites, by adding CORS headers to the proxied request.
 
 ## Usage
 ```
-$ cd /path/to/proxy-si
-$ php -S 127.0.0.1:8080
+cd /path/to/cors-proxy
+php -S 127.0.0.1:8080
 ```
+Then, pass the website resource as parameter.
 
-Ensuite, pour accéder à une ressource du SI :
-```http://127.0.0.1:8080/index.php?get=http://url-du.si/resource.xml```
+
+Exemples:
+```http://127.0.0.1:8080/?get=http://exemple.org/path/to/resource.json```
