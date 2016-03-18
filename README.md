@@ -11,4 +11,4 @@ Then, pass the website resource as parameter.
 
 
 Exemples:
-```http://127.0.0.1:8080/?get=http://exemple.org/path/to/resource.json```
+`http://127.0.0.1:8080/?get=http://exemple.org/path/to/resource.json`
