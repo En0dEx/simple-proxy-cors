@@ -8,11 +8,21 @@ foreach ($cors_headers as $cors_header) {
     header($cors_header);
 }
 
+// Get the url
+$url = $_GET['get'];
+unset($_GET['get']);
+
+// If there are other GET arguments, they belong to the requested url
+if(!empty($_GET)) {
+  $restArguments = http_build_query($_GET);
+  $url .= "&" . $restArguments;
+}
+
 // Curl
 $curl = curl_init();
 curl_setopt_array($curl, array(
     CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_URL => $_GET['get'],
+    CURLOPT_URL => $url,
     CURLOPT_HEADER => true
 ));
 $response = curl_exec($curl);
